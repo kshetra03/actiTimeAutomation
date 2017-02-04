@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="actiTime">
+    <test name="actiTimeAutomation">
+        <classes>
+
+            <class name="org.km.actiTime.Tests.ActiTimeTestRunner"/>
+            <class name="org.km.actiTime.Tests.LoginTest"/>
+            <class name="org.km.actiTime.Tests.LoginLandingZoneTest" />
+            <class name="org.km.actiTime.Tests.SampleTest"/>
+
+        </classes>
+    </test> <!-- DDMan6_Web -->
+</suite> <!-- Default Suite -->
