@@ -1,6 +1,9 @@
 package org.km.actiTime.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 /**
  * Created by kprusty on 23-01-2017.
@@ -48,6 +51,16 @@ public class TopNavigationContainer extends BasePage {
     }
 
     // get the current selection in the topNav
+    public String get_curr_top_nav_container_value() {
+        List<WebElement> top_nav_list = driver.findElements(By.xpath("//table[@id='topnav']/tbody/tr/td[@class='navItem relative']/a")) ;
+        for (WebElement we : top_nav_list) {
+            String _top_nav_list_a_class = we.getAttribute("class") ;
+            if (_top_nav_list_a_class.contains("selected")){
+                return we.getText() ;
+            }
+        }
+        return null ;
+    }
 
 
 }

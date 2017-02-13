@@ -19,7 +19,7 @@ public class LoginLandingZoneTest extends BasePage{
     }
 
     // to be executed in the end
-    @Test(dependsOnMethods = "test_correct_user_profile_name_for_admin")
+    @Test(enabled = false, dependsOnMethods = "test_correct_user_profile_name_for_admin")
     public void test_logout_redirects_to_login_page() {
         loginLandingZonePage.perform_logout_from_landing_zone();
         String _expected = "actiTIME - Login";

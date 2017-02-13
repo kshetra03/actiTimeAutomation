@@ -2,6 +2,8 @@ package org.km.actiTime.Tests;
 
 import org.km.actiTime.pages.BasePage;
 import org.km.actiTime.pages.UserListPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 
 /**
@@ -16,6 +18,23 @@ public class UserListTest extends BasePage {
     // select 10 users per page...if the users are more than 10 the footer nav next should be enabled
 
     // count the number of users.. if records per page is more than the no of users..
+    @Test
+    public void test_that_select_user_list_per_page_works() {
+        userListPage.goto_user_list_page();
+        int sel_val = 10 ;
+        userListPage.select_users_per_page(sel_val);
+        Assert.assertTrue(sel_val >= userListPage.get_number_of_rows_of_user_list_table());
+
+        sel_val = 25 ;
+        userListPage.select_users_per_page(sel_val);
+        Assert.assertTrue(sel_val >= userListPage.get_number_of_rows_of_user_list_table());
+
+        sel_val = 50 ;
+        userListPage.select_users_per_page(sel_val);
+        Assert.assertTrue(sel_val >= userListPage.get_number_of_rows_of_user_list_table());
+
+    }
+
     // the table footer nav should not be present
 
     // test search functionality
