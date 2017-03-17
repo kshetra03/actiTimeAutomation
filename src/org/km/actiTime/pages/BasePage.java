@@ -1,6 +1,7 @@
 package org.km.actiTime.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +22,7 @@ public abstract class BasePage {
     }
 
     // get current url
-    public static String get_curr_URL() {
+    public static String get_curr_url() {
         return driver.getCurrentUrl() ;
     }
 
@@ -46,6 +47,19 @@ public abstract class BasePage {
         _explicit_wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public void is_element_present(){
+
+    }
+
+    public boolean is_element_visible(By _locator){
+        try{
+            return driver.findElement(_locator).isDisplayed() ;
+        }
+        catch (NoSuchElementException nse) {
+            return false ;
+        }
+
+    }
 
     // get placeholder or pre-filled value in any text box input element
     public String get_place_holder_value(By element) {

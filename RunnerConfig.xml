@@ -6,9 +6,9 @@
 
             <class name="org.km.actiTime.Tests.ActiTimeTestRunner"/>
             <class name="org.km.actiTime.Tests.LoginTest"/>
-            <class name="org.km.actiTime.Tests.LoginLandingZoneTest" />
+            <!--<class name="org.km.actiTime.Tests.LoginLandingZoneTest" />
             <class name="org.km.actiTime.Tests.UserListTest"/>
-            <class name="org.km.actiTime.Tests.SampleTest"/>
+            <class name="org.km.actiTime.Tests.SampleTest"/> -->
 
         </classes>
     </test> <!-- DDMan6_Web -->

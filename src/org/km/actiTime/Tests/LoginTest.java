@@ -1,6 +1,7 @@
 package org.km.actiTime.Tests;
 
 import org.km.actiTime.pages.LoginPage;
+import org.km.actiTime.utils.Services;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,10 +12,13 @@ public class LoginTest extends LoginPage{
 
     LoginPage loginPage = new LoginPage();
 
+    Services services = new Services() ;
 
     @Test()
     public void test_that_username_has_correct_placeholder() {
         String _expected = "Username" ;
+        services.write_values_to_json(get_curr_url());
+
         //System.out.println(loginPage.get_place_holder_username());
         Assert.assertEquals(get_place_holder_value(get_txt_input_form_username()), _expected);
     }

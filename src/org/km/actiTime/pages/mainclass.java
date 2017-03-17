@@ -2,10 +2,11 @@ package org.km.actiTime.pages;
 
 import org.km.actiTime.utils.ActiConstants;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class mainclass extends BasePage {
 
     public static void main(String[] args) {
+
         System.setProperty(ActiConstants._webdriver_ie_bin, ActiConstants._path_IE_driver_server);
 
         // ignore IE zoom issues
